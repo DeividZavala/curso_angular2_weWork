@@ -1,0 +1,12 @@
+<p>
+  alumnos works!
+</p>
+
+<section>
+  <ul *ngFor="let alumno of alumnos">
+    <li>{{alumno.id}} -- {{alumno.name}}</li>
+    <li>Promedio: {{alumno.promedio}}</li>
+    <li>Edad: {{alumno.edad}}</li>
+    <li>Reg: {{alumno.regular}}</li>
+  </ul>
+</section>

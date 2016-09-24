@@ -1,0 +1,28 @@
+<p>
+ Productos
+</p>
+
+<section>
+  <H3>TOTAL:{{total() | currency:'MXN':true}}</H3>
+    <div>
+      
+      <article *ngFor="let producto of productos">
+        <p [class.sold_out]="quedan(producto) == 0">{{producto.id}}-{{producto.name | uppercase}}</p>
+        <ul>
+          <li>price: {{producto.price | currency:'MXN':true}}</li>
+          <li>Descrip:{{producto.description}}</li>
+          <li>stock: {{quedan(producto)}}</li>
+          <li class="sold_out" *ngIf="quedan(producto) == 0">SOLD OUT!</li>
+        </ul>
+
+        <h4 *ngIf="producto.quantity > producto.stock">No hay suficientes para tu pedido</h4>
+        <h3 *ngIf="producto.quantity > 0" >{{pedido(producto)}}</h3>
+        <figure>
+          <img [src]="producto.image" [alt]="producto.descripcion">
+        </figure>
+        <button (click)="addProduct(producto)">Agregar</button>
+        <input type="text" [(ngModel)]="producto.quantity">
+        <button (click)="removeProduct(producto)">Quitar</button>
+      </article>
+    </div>
+</section>
