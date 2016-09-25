@@ -1,6 +1,7 @@
 import { AlumnosComponent } from './alumnos/alumnos.component';
 import { QuepedroComponent } from './quepedro/quepedro.component';
 import { AversijalaComponent } from './aversijala/aversijala.component';
+import { SpotifyComponent } from './spotify/spotify.component';
 
 export const App_Routes = [
     {
@@ -14,5 +15,9 @@ export const App_Routes = [
     {
         path:'aversijala',
         component:AversijalaComponent
+    },
+    {
+        path:'spotify',
+        component:SpotifyComponent
     }
 ]

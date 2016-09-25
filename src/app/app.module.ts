@@ -8,9 +8,12 @@ import { AppComponent } from './app.component';
 import { QuepedroComponent } from './quepedro/quepedro.component';
 import { AversijalaComponent } from './aversijala/aversijala.component';
 import { AlumnosComponent } from './alumnos/alumnos.component';
+import { SpotifyComponent } from './spotify/spotify.component';
 import { ProductosService } from './aversijala/aversijala.service';
 import { AlumnosService } from './alumnos/alumnos.service';
+import { SpotifyService } from './spotify/spotify.service';;
 import { App_Routes } from './app.routes';
+
 
 
 @NgModule({
@@ -19,6 +22,7 @@ import { App_Routes } from './app.routes';
     QuepedroComponent,
     AversijalaComponent,
     AlumnosComponent,
+    SpotifyComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,7 @@ import { App_Routes } from './app.routes';
     HttpModule,
     RouterModule.forRoot(App_Routes)
   ],
-  providers: [ProductosService,AlumnosService],
+  providers: [ProductosService,AlumnosService,SpotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
