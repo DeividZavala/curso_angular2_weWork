@@ -12,6 +12,9 @@ export class SpotifyComponent {
 
     songs: Song[];
 
+     songAudio = new Audio;
+     rola = null;
+
     constructor(private spotifyService:SpotifyService){}
 
     search(song){
@@ -20,9 +23,9 @@ export class SpotifyComponent {
     }
 
     play(song){
-        let songAudio = new Audio;
-        songAudio.src = song.preview_url
-        songAudio.play()
+        this.rola = song;
+        this.songAudio.src = song.preview_url
+        this.songAudio.play()
     }
 
 }
